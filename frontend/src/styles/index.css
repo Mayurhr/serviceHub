@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; @apply bg-ink-50 text-ink-800; }
+}
+
+@layer components {
+  .btn-primary { @apply bg-saffron-500 hover:bg-saffron-600 text-white font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 shadow-md hover:shadow-saffron-500/30 active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-secondary { @apply bg-white hover:bg-ink-50 text-ink-700 font-semibold px-6 py-2.5 rounded-xl border border-ink-200 transition-all duration-200 hover:border-saffron-300 active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-outline { @apply border-2 border-saffron-500 text-saffron-600 hover:bg-saffron-50 font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-ghost { @apply text-ink-600 hover:text-saffron-600 hover:bg-saffron-50 font-medium px-4 py-2 rounded-xl transition-all duration-200 cursor-pointer; }
+  .card { @apply bg-white rounded-2xl border border-ink-100 overflow-hidden transition-all duration-300; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .card:hover { box-shadow: 0 16px 32px rgba(0,0,0,0.12); transform: translateY(-3px); }
+  .card-flat { @apply bg-white rounded-2xl border border-ink-100 overflow-hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .input-field { @apply w-full px-4 py-3 rounded-xl border border-ink-200 focus:border-saffron-400 focus:ring-2 focus:ring-saffron-100 outline-none transition-all duration-200 bg-white text-ink-800 placeholder-ink-400 font-medium; }
+  .section-title { @apply text-2xl md:text-3xl font-bold text-ink-900; font-family: 'DM Sans', sans-serif; font-weight: 800; }
+  .badge { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold; }
+  .badge-online { @apply bg-green-100 text-green-700; }
+  .badge-busy { @apply bg-amber-100 text-amber-700; }
+  .badge-offline { @apply bg-ink-100 text-ink-500; }
+  .badge-student { @apply bg-blue-100 text-blue-700; }
+  .badge-verified { @apply bg-violet-100 text-violet-700; }
+  .status-pending { @apply bg-amber-100 text-amber-700; }
+  .status-accepted { @apply bg-blue-100 text-blue-700; }
+  .status-traveling { @apply bg-cyan-100 text-cyan-700; }
+  .status-started { @apply bg-violet-100 text-violet-700; }
+  .status-in_progress { @apply bg-orange-100 text-orange-700; }
+  .status-completed { @apply bg-green-100 text-green-700; }
+  .status-cancelled { @apply bg-red-100 text-red-700; }
+  .trust-high { @apply text-green-600; }
+  .trust-mid { @apply text-amber-600; }
+  .trust-low { @apply text-red-600; }
+  .page-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .section-pad { @apply py-12 md:py-16; }
+}
+
+@layer utilities {
+  .text-gradient-saffron { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .text-gradient-violet { background: linear-gradient(135deg, #8b5cf6, #6d28d9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .bg-saffron-gradient { background: linear-gradient(135deg, #f97316, #ea580c); }
+  .bg-hero-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(249,115,22,0.08) 0, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139,92,246,0.06) 0, transparent 50%), radial-gradient(circle at 60% 80%, rgba(59,130,246,0.05) 0, transparent 50%); }
+}
+
+@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.shimmer { background: linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%); background-size:200% 100%; animation:shimmer 1.5s infinite; }
+
+@keyframes trackPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:0.7} }
+.track-pulse { animation: trackPulse 1.5s ease-in-out infinite; }
+
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes scaleIn { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
+.animate-fade-in { animation: fadeIn 0.5s ease; }
+.animate-slide-up { animation: slideUp 0.4s ease; }
+.animate-scale-in { animation: scaleIn 0.3s ease; }
