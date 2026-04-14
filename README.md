@@ -58,7 +58,7 @@ Users can explore services, view details, select time slots, and make bookings. 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-link>
+git clone [https://github.com/Mayurhr/serviceHub.git]
 cd servease
 ```
 
@@ -147,7 +147,6 @@ servease/
 
 ServeEase demonstrates a complete MERN stack application with real-world features such as authentication, role management, and booking workflows.
 
-This project was built as part of a practical learning experience in full-stack development.
 
 ---
 
