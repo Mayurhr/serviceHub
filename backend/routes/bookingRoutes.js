@@ -1,0 +1,11 @@
+const r = require('express').Router();
+const c = require('../controllers/bookingController');
+const { protect, adminOnly } = require('../middleware/auth');
+r.post('/', protect, c.createBooking);
+r.get('/my', protect, c.getUserBookings);
+r.get('/all', protect, adminOnly, c.getAllBookings);
+r.get('/:id', protect, c.getBooking);
+r.get('/:id/invoice', protect, c.getInvoice);
+r.put('/:id/track', protect, c.updateTrackingStatus);
+r.put('/:id/cancel', protect, c.cancelBooking);
+module.exports = r;

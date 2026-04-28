@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; @apply bg-slate-50 text-slate-800; }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary   { @apply bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow-orange-200 hover:shadow-md active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-secondary { @apply bg-white hover:bg-slate-50 text-slate-700 font-semibold px-6 py-2.5 rounded-xl border border-slate-200 transition-all duration-200 hover:border-slate-300 hover:shadow-sm active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-outline   { @apply border-2 border-orange-500 text-orange-600 hover:bg-orange-50 font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95 cursor-pointer inline-flex items-center justify-center gap-2; }
+  .btn-ghost     { @apply text-slate-600 hover:text-orange-600 hover:bg-orange-50 font-medium px-4 py-2 rounded-xl transition-all duration-200 cursor-pointer; }
+
+  /* ── Cards ── */
+  .card      { @apply bg-white rounded-2xl border border-slate-100 overflow-hidden transition-all duration-300; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.10); transform: translateY(-2px); }
+  .card-flat { @apply bg-white rounded-2xl border border-slate-100 overflow-hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .card-glass { @apply bg-white/80 backdrop-blur-sm rounded-2xl border border-white/60; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+  /* ── Inputs ── */
+  .input-field { @apply w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition-all duration-200 bg-white text-slate-800 placeholder-slate-400 font-medium; }
+
+  /* ── Typography ── */
+  .section-title { @apply text-2xl md:text-3xl font-extrabold text-slate-900; }
+
+  /* ── Badges ── */
+  .badge         { @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold; }
+  .badge-online  { @apply bg-green-100 text-green-700; }
+  .badge-busy    { @apply bg-amber-100 text-amber-700; }
+  .badge-offline { @apply bg-slate-100 text-slate-500; }
+  .badge-student { @apply bg-blue-100 text-blue-700; }
+  .badge-verified { @apply bg-violet-100 text-violet-700; }
+
+  /* ── Status colors ── */
+  .status-pending     { @apply bg-amber-100 text-amber-700; }
+  .status-accepted    { @apply bg-blue-100 text-blue-700; }
+  .status-traveling   { @apply bg-cyan-100 text-cyan-700; }
+  .status-started     { @apply bg-violet-100 text-violet-700; }
+  .status-in_progress { @apply bg-orange-100 text-orange-700; }
+  .status-completed   { @apply bg-green-100 text-green-700; }
+  .status-cancelled   { @apply bg-red-100 text-red-700; }
+
+  /* ── Trust ── */
+  .trust-high { @apply text-green-600; }
+  .trust-mid  { @apply text-amber-600; }
+  .trust-low  { @apply text-red-600; }
+
+  /* ── Layout ── */
+  .page-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .section-pad    { @apply py-12 md:py-16; }
+
+  /* ── Booking Steps ── */
+  .step-card { @apply bg-white rounded-3xl border border-slate-100 p-6 md:p-8; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+  .step-active { @apply bg-orange-500 text-white shadow-lg shadow-orange-200; }
+  .step-done   { @apply bg-green-500 text-white; }
+  .step-idle   { @apply bg-slate-100 text-slate-400; }
+  .step-line-done { @apply bg-green-400; }
+  .step-line-idle { @apply bg-slate-200; }
+
+  /* ── Provider slot card ── */
+  .provider-slot { @apply border-2 border-slate-100 rounded-2xl p-4 cursor-pointer transition-all hover:border-orange-200 hover:shadow-md; }
+  .provider-slot-selected { @apply border-orange-400 bg-orange-50 shadow-md shadow-orange-100; }
+
+  /* ── Time slot button ── */
+  .time-btn        { @apply py-2.5 px-2 rounded-xl text-sm font-bold border-2 border-slate-200 text-slate-700 hover:border-orange-300 hover:bg-orange-50 transition-all; }
+  .time-btn-active { @apply border-orange-400 bg-orange-500 text-white shadow-md; }
+}
+
+@layer utilities {
+  .text-gradient-orange { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .text-gradient-violet { background: linear-gradient(135deg, #8b5cf6, #6d28d9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .bg-orange-gradient   { background: linear-gradient(135deg, #f97316, #ea580c); }
+  .bg-hero-pattern      { background-image: radial-gradient(circle at 20% 50%, rgba(249,115,22,0.07) 0, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139,92,246,0.05) 0, transparent 50%), radial-gradient(circle at 60% 80%, rgba(59,130,246,0.04) 0, transparent 50%); }
+  /* Keep saffron aliases for pages that use them */
+  .bg-saffron-gradient { background: linear-gradient(135deg, #f97316, #ea580c); }
+  .text-gradient-saffron { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+}
+
+/* ── Scrollbar hide utility ── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── Shimmer ── */
+@keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.shimmer { background: linear-gradient(90deg,#f1f5f9 25%,#e2e8f0 50%,#f1f5f9 75%); background-size:200% 100%; animation:shimmer 1.5s infinite; }
+
+/* ── Animations ── */
+@keyframes fadeIn    { from{opacity:0}                         to{opacity:1} }
+@keyframes slideUp   { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes scaleIn   { from{opacity:0;transform:scale(0.96)}      to{opacity:1;transform:scale(1)} }
+@keyframes slideDown { from{opacity:0;transform:translateY(-10px)} to{opacity:1;transform:translateY(0)} }
+.animate-fade-in  { animation: fadeIn  0.4s ease; }
+.animate-slide-up { animation: slideUp 0.35s ease; }
+.animate-scale-in { animation: scaleIn 0.3s ease; }
+.animate-slide-down { animation: slideDown 0.3s ease; }
+
+/* ── Pulse dot ── */
+@keyframes trackPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:0.7} }
+.track-pulse { animation: trackPulse 1.5s ease-in-out infinite; }
